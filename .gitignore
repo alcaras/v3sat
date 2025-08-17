@@ -1,0 +1,44 @@
+# Save files and extracted data
+save-files/*.v3
+extracted-saves/*.json
+reports/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+
+# Rakaly binary (user downloads separately)
+rakaly/rakaly
+rakaly/rakaly.exe
+
+# Victoria 3 game data (user copies from game installation)
+common/
+events/
+localization/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
