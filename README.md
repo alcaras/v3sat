@@ -81,6 +81,7 @@ v3sat/
 ├── common/             # Victoria 3 game data files (copy from game)
 ├── events/             # Victoria 3 event definitions (copy from game)
 ├── localization/       # Game localization files (copy from game)
+├── icons/              # Victoria 3 goods and market icons (optional, for enhanced visualizations)
 ├── humans.txt          # List of human-controlled countries
 └── *.py                # Analysis scripts
 ```
