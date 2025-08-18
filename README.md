@@ -4,9 +4,14 @@ A comprehensive suite of tools for analyzing Victoria 3 save files, converting t
 
 ## Quick Start
 
-1. **Download Rakaly**: Download the Rakaly binary for your platform from [https://github.com/rakaly/librakaly](https://github.com/rakaly/librakaly)
+1. **Download Rakaly**: Download the Rakaly CLI binary for your platform from [https://github.com/rakaly/cli/releases](https://github.com/rakaly/cli/releases)
    - Create a `rakaly/` directory in this folder
-   - Place the `rakaly` binary inside (make sure it's executable: `chmod +x rakaly/rakaly`)
+   - Download the appropriate file for your platform:
+     - **Windows**: `rakaly-x86_64-pc-windows-msvc.zip` (extract `rakaly.exe`)
+     - **macOS**: `rakaly-x86_64-apple-darwin.tar.gz` (extract `rakaly`)
+     - **Linux**: `rakaly-x86_64-unknown-linux-musl.tar.gz` (extract `rakaly`)
+   - Place the binary in the `rakaly/` directory
+   - On macOS/Linux, make it executable: `chmod +x rakaly/rakaly`
 
 2. **Copy Victoria 3 game data**: Copy these directories from your Victoria 3 installation to this folder:
    - `common/` (from `Victoria 3/game/common/`)
@@ -102,7 +107,7 @@ ITA
 ## Requirements
 
 - **Python 3.x**
-- **Rakaly binary**: Download from [https://github.com/rakaly/librakaly](https://github.com/rakaly/librakaly)
+- **Rakaly CLI binary**: Download from [https://github.com/rakaly/cli/releases](https://github.com/rakaly/cli/releases)
 - **Victoria 3 game data**: Copy from your Victoria 3 installation (see setup above)
 - **Python packages**: 
   - matplotlib, pandas (for basic charts)
@@ -135,7 +140,7 @@ Our tools have been validated against Victoria 3's internal calculations:
 
 ## Troubleshooting
 
-**"rakaly not found"**: Download Rakaly binary and place in `rakaly/rakaly`
+**"rakaly not found"**: Download Rakaly CLI binary from [https://github.com/rakaly/cli/releases](https://github.com/rakaly/cli/releases) and place in `rakaly/` directory
 **"No save files found"**: Place `.v3` files in `save-files/` directory
 **"Permission denied"**: Make sure rakaly binary is executable (`chmod +x rakaly/rakaly`)
 **"Module not found"**: Install required Python packages (`pip install plotly kaleido squarify`)
@@ -143,6 +148,6 @@ Our tools have been validated against Victoria 3's internal calculations:
 
 ## Contributing
 
-This toolset analyzes Victoria 3's save file format using [Rakaly](https://github.com/rakaly/librakaly) for binary-to-JSON conversion. Game data definitions must be copied from your Victoria 3 installation.
+This toolset analyzes Victoria 3's save file format using [Rakaly CLI](https://github.com/rakaly/cli) for binary-to-JSON conversion. Game data definitions must be copied from your Victoria 3 installation.
 
 For questions or improvements, ensure you have the required game data directories from your Victoria 3 installation.
