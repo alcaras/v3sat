@@ -123,7 +123,7 @@ ITA
 - **Standard of Living**: Extracted values may differ from what's shown in-game
 - **Foreign Ownership**: All foreign GDP ownership numbers are estimates/calculations. While they seem directionally correct, they're difficult to verify against the game since there's no easy way to see these stats in Victoria 3
 - **GDP Sampling**: Victoria 3 samples GDP data every 7 days (not 28 as the data structure suggests)
-- **Multiplayer Saves**: GDP history may be lost when players leave/rejoin - use the `--session3` parameter in gdp_timeseries.py to merge data from previous saves if needed
+- **Multiplayer Saves**: GDP history may be lost when players leave/rejoin in multiplayer games
 
 ## Contributing
 
