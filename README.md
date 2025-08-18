@@ -1,6 +1,8 @@
 # Victoria 3 Save Analysis Tools (V3SAT)
 
-A comprehensive suite of tools for analyzing Victoria 3 save files, converting them from compressed binary format to JSON for easier analysis and generating detailed reports and visualizations.
+A collection of tools for analyzing Victoria 3 save files. These scripts help convert save files from compressed binary format to JSON and generate various reports and visualizations.
+
+**Note:** This is a community project and many scripts are still work-in-progress. Results should be considered estimates and may not perfectly match in-game values.
 
 ## Quick Start
 
@@ -41,22 +43,22 @@ That's it! All reports will be generated in a timestamped directory under `repor
 ## Features
 
 ### 🏆 Core Economic Analysis
-- **GDP Reports**: Current rankings and full historical time series
-- **GDP Visualizations**: Beautiful charts with authentic Victoria 3 colors
-- **GDP Treemaps**: Hierarchical visualization by power blocs with colonial relationships
-- **Effective GDP**: Total economic control including foreign ownership
+- **GDP Reports**: Current rankings and historical time series
+- **GDP Visualizations**: Charts using Victoria 3 country colors
+- **GDP Treemaps**: Visualization by power blocs with colonial relationships
 
 ### 👥 Population & Social Analysis
 - **Population Reports**: Demographics and growth trends
-- **Standard of Living**: Quality of life metrics across nations
+- **Standard of Living**: Attempts to extract quality of life metrics (may not match in-game values)
 - **Literacy Analysis**: Education levels and development
 - **Migration**: Population movement and attraction patterns
 
 ### ⚔️ Military Analysis
 - **Military Power**: Unit-based scoring for army and navy strength
-- **Power Projection**: Manpower-based military capacity
+- **Power Projection**: Approximation of military capacity (does not match in-game power projection exactly)
 - **Military Treemaps**: Visual comparison of total, army, and navy power
-- **War Reports**: Battle history, statistics, and diplomatic tensions
+- **War Reports**: Battle tracking (still in development)
+- **Diplomatic Plays**: Analysis of diplomatic tensions (work in progress)
 
 ### 🏛️ Political & Diplomatic Analysis
 - **Interest Groups**: Political composition and clout distribution
@@ -65,7 +67,7 @@ That's it! All reports will be generated in a timestamped directory under `repor
 - **Power Blocs**: Alliance membership, principles, and economic power
 
 ### 🏭 Economic Deep Dive
-- **Foreign Ownership**: Cross-border investment analysis (5 different methodologies)
+- **Foreign Ownership**: Estimated cross-border investments (calculated approximations, hard to verify against game)
 - **Company Analysis**: Profitability and ownership patterns
 - **Goods Production**: Production rankings and treemap visualizations
 - **Construction**: Infrastructure development tracking
@@ -114,37 +116,14 @@ ITA
   - plotly, kaleido (for interactive treemaps - run `pip install plotly kaleido`)
   - squarify (for simple treemaps - run `pip install squarify`)
 
-## Understanding the Data
+## Known Limitations
 
-### GDP Sampling
-Victoria 3 samples GDP data **every 7 days**, not the 28 days shown in the data structure. Our tools use the correct 7-day sampling for accurate historical reconstruction.
-
-### Multiplayer Bug Handling
-Victoria 3 has a bug where GDP history is lost when players leave/rejoin. Use the `--session3` parameter in gdp_timeseries.py to merge data from previous saves when needed.
-
-### Foreign Ownership
-We provide 5 different foreign ownership analysis methods:
-- **Simple**: Basic building counts
-- **Detailed**: By building types
-- **By Entity**: Companies vs other ownership types
-- **Full GDP**: GDP-weighted analysis
-- **True GDP**: Most accurate using Victoria 3's actual formula
-
-## Data Accuracy
-
-Our tools have been validated against Victoria 3's internal calculations:
-- ✅ GDP calculations match the game's formula exactly
-- ✅ Military scoring uses actual unit statistics
-- ✅ Time series data validated across multiple save files
-- ✅ Foreign ownership percentages confirmed accurate
-
-## Troubleshooting
-
-**"rakaly not found"**: Download Rakaly CLI binary from [https://github.com/rakaly/cli/releases](https://github.com/rakaly/cli/releases) and place in `rakaly/` directory
-**"No save files found"**: Place `.v3` files in `save-files/` directory
-**"Permission denied"**: Make sure rakaly binary is executable (`chmod +x rakaly/rakaly`)
-**"Module not found"**: Install required Python packages (`pip install plotly kaleido squarify`)
-**"Game data not found"**: Copy `common/`, `events/`, and `localization/` directories from your Victoria 3 installation
+- **Battle History & Diplomatic Plays**: Still under development
+- **Power Projection**: Our approximation doesn't match the in-game calculation exactly
+- **Standard of Living**: Extracted values may differ from what's shown in-game
+- **Foreign Ownership**: All foreign GDP ownership numbers are estimates/calculations. While they seem directionally correct, they're difficult to verify against the game since there's no easy way to see these stats in Victoria 3
+- **GDP Sampling**: Victoria 3 samples GDP data every 7 days (not 28 as the data structure suggests)
+- **Multiplayer Saves**: GDP history may be lost when players leave/rejoin - use the `--session3` parameter in gdp_timeseries.py to merge data from previous saves if needed
 
 ## Contributing
 
